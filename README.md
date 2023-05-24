@@ -18,10 +18,13 @@
   - [专项](#专项)
 - [技术\&工具](#技术工具)
   - [Python](#python)
+    - [pip](#pip)
+    - [conda](#conda)
     - [图形处理](#图形处理)
   - [Groovy](#groovy)
   - [Javascript](#javascript)
   - [Jmeter](#jmeter)
+    - [基础理论](#基础理论)
     - [常用代码合集](#常用代码合集)
   - [Selenium](#selenium)
   - [Flask](#flask)
@@ -153,6 +156,26 @@ lambda
 yield
 ```
 
+### pip
+
+```shell
+pip install selenium
+
+# 导出当前环境依赖
+pip freeze > requirements.txt
+# 根据导出的依赖环境进行依赖包安装
+pip install -r requirements.txt
+```
+
+### conda
+
+```shell
+conda info
+
+conda env list
+conda create -n vtest python=3.10
+```
+
 ### 图形处理
 
 PIL
@@ -191,7 +214,9 @@ Opencv
     Http Request Defaults
     Http Header Manager
 )
-插件管理
+插件管理(
+  jmeter-plugins-manager
+)
 脚本代码(
     Jmeter从3.1开始使用groovy作为默认的脚本，且内置了groovy引擎
     HeaderManager
@@ -199,6 +224,13 @@ Opencv
     DigestUtils(md5)
 )
 ```
+
+### 基础理论
+
+1. 线程组就是一个线程池，里面配置的threadnum就是这个池子里面线程的数量；
+2. 每个线程组里面的每个线程，会根据jmeter配置的request顺序进行执行；
+3. 即如果一个线程组里面有多个request，配置的threadnum是2，那么多个request都会被执行两次；
+
 
 ### 常用代码合集
 
