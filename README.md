@@ -21,6 +21,7 @@
     - [pip](#pip)
     - [conda](#conda)
     - [图形处理](#图形处理)
+  - [Linux](#linux)
   - [Groovy](#groovy)
   - [Javascript](#javascript)
   - [Jmeter](#jmeter)
@@ -181,9 +182,15 @@ conda create -n vtest python=3.10
 PIL
 Opencv
 
-## Groovy
+## Linux
+
+```shell
 
 ```
+
+## Groovy
+
+```groovy
 执行(
   groovy app.groovy
 )
@@ -197,7 +204,7 @@ Opencv
 
 ## Jmeter
 
-```
+```groovy
 命令行参数(
     -Jvar=1  ${__P(var, 2)}
     -n -t app.jmx -l log.jtl
