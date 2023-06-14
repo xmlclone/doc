@@ -1,4 +1,15 @@
+- [基础命令](#基础命令)
 - [Dockerfile](#dockerfile)
+
+# 基础命令
+
+```shell
+# 保存镜像
+docker save -o nginx.tar nginx:latest
+
+# 导入镜像
+docker load -i nginx.tar
+```
 
 # Dockerfile
 
@@ -29,3 +40,5 @@ WORKDIR /opt/mrtctest
 ENTRYPOINT ["sh" ,"/opt/entrypoint.sh"]
 CMD ["scripts/dory_case_demo.py", "--no-statis"]
 ```
+
+最后使用`docker build -t xxx:vx.x .`命令即可生成镜像
