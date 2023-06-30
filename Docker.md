@@ -1,9 +1,11 @@
 - [基础命令](#基础命令)
 - [Dockerfile](#dockerfile)
+- [QA](#qa)
+  - [权限不足](#权限不足)
 
 # 基础命令
 
-```shell
+```bash
 # 保存镜像
 docker save -o nginx.tar nginx:latest
 
@@ -42,3 +44,15 @@ CMD ["scripts/dory_case_demo.py", "--no-statis"]
 ```
 
 最后使用`docker build -t xxx:vx.x .`命令即可生成镜像
+
+# QA
+
+## 权限不足
+
+```bash
+# 配置docke，需要把对应的用户加入到docker组
+sudo groupadd docker
+# 比如把下面的当前用户加入到docker组
+sudo gpasswd -a $USER docker
+newgrp docker
+```
